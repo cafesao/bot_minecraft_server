@@ -1,0 +1,19 @@
+{
+  "name": "bot_minecraft_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile": "yarn tsc --build --force"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.101",
+    "@types/node": "^18.6.4",
+    "aws-sdk": "^2.1189.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "senselogs": "^1.0.3"
+  }
+}
