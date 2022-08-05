@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  minecraft_server:
+    image: itzg/minecraft-server
+    environment:
+      OVERRIDE_SERVER_PROPERTIES: true
+      DIFFICULTY: hard
+      EULA: true
+      ONLINE_MODE: false
+      VIEW_DISTANCE: 16
+      VERSION: 1.19
+      MEMORY: 3G
+    ports:
+      - 25565:25565
+    volumes:
+      - minecraft_server:/data
+volumes:
+  minecraft_server:
