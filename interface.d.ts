@@ -12,14 +12,18 @@ export interface IBody {
 }
 
 export interface IMessages {
-  [command: string]: string
+  [command: string]: Function
 }
 
 export interface ICommands {
   [command: string]: Function
 }
 
-export interface IStatus {
-  runningCount: number
-  desiredCount: number
+export interface IStatusServer {
+  runningCount?: number
+  desiredCount?: number
+}
+
+export interface IIPServer {
+  ip?: string
 }

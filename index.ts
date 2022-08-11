@@ -1,16 +1,17 @@
 import { APIGatewayProxyHandler } from 'aws-lambda'
 import senselogs from 'senselogs'
 
-import messages from './utils/message'
+import messages from './messages/message'
 import aws from './utils/aws'
 import { IBody, ICommands } from './interface'
 
-const logs = new senselogs()
+const log = new senselogs()
 
 const commands: ICommands = {
   '/start_server': aws.initService,
   '/stop_server': aws.stopService,
   '/status_server': aws.statusService,
+  '/ip_server': aws.ipService,
 }
 
 export const handler: APIGatewayProxyHandler = async (event): Promise<any> => {
@@ -35,6 +36,6 @@ export const handler: APIGatewayProxyHandler = async (event): Promise<any> => {
       return true
     }
   } catch (error: any) {
-    logs.error(error)
+    log.error(error)
   }
 }
